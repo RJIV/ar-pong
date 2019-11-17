@@ -1,4 +1,17 @@
 <resources>
+
     <string name="app_name">AR Pong</string>
+<<<<<<< Updated upstream
     <string name="play">Play</string>
+=======
+
+<!--LoginFragment-->
+    <string name="create_username">Create Username</string>
+    <string name="login">Login</string>
+    <string name="username">Username</string>
+
+
+<!--MainMenuFragment-->
+    <string name="welcomeMessage">Welcome %s!</string>
+>>>>>>> Stashed changes
 </resources>
