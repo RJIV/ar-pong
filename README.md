@@ -11,6 +11,10 @@ AR Pong emulates the classic game of Pong. This version of Pong has been made to
 - Difficulty settings for AI opponent
 - Custom gesture detector with gesture-based controls
 
+### Demo
+
+![](https://github.com/RJIV/ar-pong/blob/master/ARPongDemo.gif)
+
 ### How It Works
 The easiest way to get started is with Sceneform’s AR Fragment
 - Renders an AR enabled camera view   
