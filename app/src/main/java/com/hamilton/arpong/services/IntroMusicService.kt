@@ -1,13 +1,13 @@
-package com.chuahamilton.arpong.services
+package com.hamilton.arpong.services
 
 import android.app.Service
 import android.content.Intent
 import android.media.MediaPlayer
 import android.os.IBinder
-import com.chuahamilton.arpong.R
+import com.hamilton.arpong.R
 
 
-class GameBackgroundMusic : Service() {
+class IntroMusicService : Service() {
     private lateinit var player: MediaPlayer
     override fun onBind(arg0: Intent): IBinder? {
         return null
@@ -15,9 +15,9 @@ class GameBackgroundMusic : Service() {
 
     override fun onCreate() {
         super.onCreate()
-        player = MediaPlayer.create(this, R.raw.game_background_music)
+        player = MediaPlayer.create(this, R.raw.intro_theme)
         player.isLooping = true // Set looping
-        player.setVolume(100f, 100f)
+        player.setVolume(0.5f, 0.5f)
         player.start()
     }
 

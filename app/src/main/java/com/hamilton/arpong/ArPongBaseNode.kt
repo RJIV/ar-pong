@@ -1,15 +1,17 @@
-package com.chuahamilton.arpong.arpong
+package com.hamilton.arpong
 
 import android.content.Context
 import android.graphics.Color.parseColor
-import com.chuahamilton.arpong.R
-import com.chuahamilton.arpong.pong.Pong
-import com.chuahamilton.arpong.utils.DifficultyLevel
+import com.hamilton.arpong.pong.Pong
+import com.hamilton.arpong.utils.DifficultyLevel
 import com.google.ar.sceneform.FrameTime
 import com.google.ar.sceneform.Node
 import com.google.ar.sceneform.math.Vector3
 import com.google.ar.sceneform.rendering.Color
 import com.google.ar.sceneform.rendering.ViewRenderable
+import com.hamilton.arpong.utils.makeCubeRenderable
+import com.hamilton.arpong.utils.makeSphereRenderable
+import com.hamilton.arpong.utils.makeViewRenderable
 import kotlinx.android.synthetic.main.arpong_scoreboard.view.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

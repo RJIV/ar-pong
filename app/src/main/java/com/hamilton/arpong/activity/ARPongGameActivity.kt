@@ -1,25 +1,27 @@
-package com.chuahamilton.arpong
+package com.hamilton.arpong.activity
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import com.chuahamilton.arpong.arpong.checkIsSupportedDeviceOrFinish
-import com.chuahamilton.arpong.fragments.GameFragment
-import com.chuahamilton.arpong.services.GameBackgroundMusic
-import com.chuahamilton.arpong.utils.DifficultyLevel
+import com.hamilton.arpong.R
+import com.hamilton.arpong.databinding.ActivityArpongGameBinding
+import com.hamilton.arpong.fragments.GameFragment
+import com.hamilton.arpong.services.GameBackgroundMusic
+import com.hamilton.arpong.utils.DifficultyLevel
+import com.hamilton.arpong.utils.checkIsSupportedDeviceOrFinish
 
 class ARPongGameActivity : AppCompatActivity() {
 
-    private var gameIntent = Intent()
-    private val activityTag = "ARPongGameActivity"
+    private lateinit var binding: ActivityArpongGameBinding
     private lateinit var difficultyLevel: DifficultyLevel
+    private val activityTag = "ARPongGameActivity"
     private var bundle = Bundle()
+    private var gameIntent = Intent()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_arpong_game)
+        binding = ActivityArpongGameBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         gameIntent = startMusic()
 
@@ -29,17 +31,15 @@ class ARPongGameActivity : AppCompatActivity() {
 
         difficultyLevel = intent.extras!!.get("DIFFICULTY") as DifficultyLevel
 
-        val fm: FragmentManager = supportFragmentManager
-        var frag: Fragment? = fm.findFragmentById(R.id.fragment_container)
+        var fragment = supportFragmentManager.findFragmentById(R.id.fragment_container)
 
-        if (frag == null) {
-            frag = GameFragment()
+        if (fragment == null) {
+            fragment = GameFragment()
 
             bundle.putSerializable("DIFFICULTY", difficultyLevel)
-            frag.arguments = bundle
-
-            fm.beginTransaction()
-                .add(R.id.fragment_container, frag)
+            fragment.arguments = bundle
+            supportFragmentManager.beginTransaction()
+                .add(R.id.fragment_container, fragment)
                 .addToBackStack(null)
                 .commit()
         }

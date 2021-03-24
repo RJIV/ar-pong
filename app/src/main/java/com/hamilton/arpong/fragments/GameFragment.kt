@@ -1,15 +1,13 @@
-package com.chuahamilton.arpong.fragments
-
+package com.hamilton.arpong.fragments
 
 import android.content.Context
 import android.os.Bundle
 import android.view.*
-import com.chuahamilton.arpong.arpong.ArPongBaseNode
-import com.chuahamilton.arpong.utils.DifficultyLevel
 import com.google.ar.core.Anchor
 import com.google.ar.sceneform.AnchorNode
 import com.google.ar.sceneform.ux.ArFragment
-
+import com.hamilton.arpong.ArPongBaseNode
+import com.hamilton.arpong.utils.DifficultyLevel
 
 class GameFragment : ArFragment() {
 

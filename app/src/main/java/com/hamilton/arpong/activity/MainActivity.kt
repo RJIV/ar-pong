@@ -1,14 +1,13 @@
-package com.chuahamilton.arpong
+package com.hamilton.arpong.activity
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
-import com.chuahamilton.arpong.fragments.LoginFragment
-import com.chuahamilton.arpong.services.IntroMusicService
+import com.hamilton.arpong.R
+import com.hamilton.arpong.fragments.LoginFragment
+import com.hamilton.arpong.services.IntroMusicService
 import java.lang.Thread.sleep
-
-
 
 class MainActivity : AppCompatActivity() {
 
@@ -41,7 +40,7 @@ class MainActivity : AppCompatActivity() {
         stopService(mainIntent)
     }
 
-    private fun startMusic(): Intent{
+    private fun startMusic(): Intent {
         val musicService = Intent(this, IntroMusicService::class.java)
         startService(musicService)
         return musicService

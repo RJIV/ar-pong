@@ -1,12 +1,12 @@
-package com.chuahamilton.arpong.pong
+package com.hamilton.arpong.pong
 
 import android.app.AlertDialog
 import android.content.Context
 import android.media.MediaPlayer
 import android.view.LayoutInflater
 import com.bumptech.glide.Glide
-import com.chuahamilton.arpong.R
-import com.chuahamilton.arpong.utils.DifficultyLevel
+import com.hamilton.arpong.R
+import com.hamilton.arpong.utils.DifficultyLevel
 import kotlinx.android.synthetic.main.game_winner_dialog.*
 import kotlinx.android.synthetic.main.game_winner_dialog.view.*
 import kotlin.math.abs

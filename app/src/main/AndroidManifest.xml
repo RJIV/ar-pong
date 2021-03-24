@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.chuahamilton.arpong">
+    package="com.hamilton.arpong">
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-feature
@@ -18,11 +18,11 @@
         tools:ignore="GoogleAppIndexingWarning">
 
         <service
-            android:name=".services.IntroMusicService"
+            android:name="com.hamilton.arpong.services.IntroMusicService"
             android:enabled="true" />
 
         <activity
-            android:name=".MainActivity"
+            android:name="com.hamilton.arpong.activity.MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,11 +32,11 @@
         </activity>
 
         <service
-            android:name=".services.GameBackgroundMusic"
+            android:name="com.hamilton.arpong.services.GameBackgroundMusic"
             android:enabled="true" />
 
         <activity
-            android:name=".ARPongGameActivity"
+            android:name="com.hamilton.arpong.activity.ARPongGameActivity"
             android:label="@string/title_activity_arpong_game"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
