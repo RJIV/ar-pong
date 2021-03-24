@@ -1,4 +1,4 @@
-package com.chuahamilton.arpong.arpong
+package com.hamilton.arpong.utils
 
 import android.content.Context
 import android.os.Build
@@ -38,14 +38,16 @@ suspend fun makeCubeRenderable(
     context: Context,
     size: Vector3,
     position: Vector3,
-    color: Color) = withContext(
-        Dispatchers.Main
+    color: Color
+) = withContext(
+    Dispatchers.Main
 ) {
     val material = MaterialFactory.makeOpaqueWithColor(context, color).await()
     ShapeFactory.makeCube(size, position, material)
 }
 
 suspend fun makeViewRenderable(context: Context, viewId: Int) = withContext(Dispatchers.Main) {
-    val viewRenderable: ViewRenderable = ViewRenderable.builder().setView(context, viewId).build().await()
+    val viewRenderable: ViewRenderable =
+        ViewRenderable.builder().setView(context, viewId).build().await()
     viewRenderable
 }
