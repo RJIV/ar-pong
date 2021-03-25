@@ -57,7 +57,7 @@ class GameFragment : ArFragment() {
                 }
             })
 
-        arSceneView.scene.setOnTouchListener { hitTestResult, motionEvent ->
+        arSceneView.scene.setOnTouchListener { _, motionEvent ->
             if (motionEvent.action == MotionEvent.ACTION_UP && gamePlaced) {
                 paddleInput = 0
                 arPongBaseNode.playerInput = 0
@@ -65,7 +65,7 @@ class GameFragment : ArFragment() {
             gestureDetector.onTouchEvent(motionEvent)
         }
 
-        setOnTapArPlaneListener { hitResult, plane, motionEvent ->
+        setOnTapArPlaneListener { hitResult, _, _ ->
             if (!gamePlaced) {
                 placeGame(hitResult.createAnchor())
             }

@@ -9,13 +9,12 @@
         android:required="true" />
 
     <application
-        android:allowBackup="true"
         android:icon="@mipmap/arpong_icon_round"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/arpong_icon_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.Launcher"
-        tools:ignore="GoogleAppIndexingWarning">
+        tools:ignore="AllowBackup,GoogleAppIndexingWarning">
 
         <service
             android:name="com.hamilton.arpong.services.IntroMusicService"
