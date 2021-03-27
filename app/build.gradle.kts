@@ -5,14 +5,14 @@ plugins {
 }
 
 android {
-    compileSdkVersion(30)
-    buildToolsVersion("30.0.2")
+    compileSdkVersion(BuildConfigVersions.COMPILE_SDK_VERSION)
+    buildToolsVersion(BuildConfigVersions.BUILD_TOOLS_VERSION)
     defaultConfig {
         applicationId = "com.hamilton.arpong"
-        minSdkVersion(26)
-        targetSdkVersion(30)
-        versionCode = 1
-        versionName = "1.0"
+        minSdkVersion(BuildConfigVersions.MIN_SDK_VERSION)
+        targetSdkVersion(BuildConfigVersions.TARGET_SDK_VERSION)
+        versionCode = BuildConfigVersions.VERSION_CODE
+        versionName = BuildConfigVersions.VERSION_NAME
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -38,31 +38,29 @@ android {
 
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.4.31")
-    implementation("androidx.appcompat:appcompat:1.2.0")
-    implementation("androidx.core:core-ktx:1.3.2")
-    implementation("androidx.constraintlayout:constraintlayout:2.0.4")
-    implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.0")
-    implementation("androidx.legacy:legacy-support-v4:1.0.0")
-    implementation("com.google.android.material:material:1.3.0")
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test:runner:1.3.0")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.3.0")
+    implementation(Dependencies.Kotlin.STDLIB)
+    implementation(Dependencies.Androidx.AppCompat.APPCOMPAT)
+    implementation(Dependencies.Androidx.Core.CORE_KTX)
+    implementation(Dependencies.Androidx.ConstraintLayout.CONSTRAINT_LAYOUT)
+    implementation(Dependencies.Androidx.Lifecycle.LIFECYLE_EXTENSIONS)
+    implementation(Dependencies.Androidx.Lifecycle.LIFECYCLE_VIEWMODEL_KTX)
+    implementation(Dependencies.Androidx.Legacy.LEGACY_SUPPORT_V4)
+    androidTestImplementation(Dependencies.Androidx.Test.RUNNER)
+    androidTestImplementation(Dependencies.Androidx.Test.Espresso.ESPRESSO_CORE)
+    testImplementation(Dependencies.JUnit.JUNIT)
 
-    // Provides ARCore Session and related resources.
-    implementation("com.google.ar:core:1.23.0")
-
-    // Sceneform dependency
-    implementation("com.google.ar.sceneform.ux:sceneform-ux:1.17.1")
+    // Google
+    implementation(Dependencies.Google.Android.Material.MATERIAL)
+    implementation(Dependencies.Google.AR.CORE)
+    implementation(Dependencies.Google.AR.Sceneform.UX.SCENEFORM_UX)
 
     // Kotlin Coroutines
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.1")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.1")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:1.3.8")
+    implementation(Dependencies.Kotlin.Coroutines.CORE)
+    implementation(Dependencies.Kotlin.Coroutines.ANDROID)
+    implementation(Dependencies.Kotlin.Coroutines.JDK8)
 
     //Gif dependency
-    implementation("com.github.bumptech.glide:glide:4.12.0") {
+    implementation(Dependencies.BumpTech.Glide.GLIDE) {
         exclude("com.android.support")
     }
 }
